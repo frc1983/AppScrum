@@ -1,0 +1,9 @@
+<h1>
+  {{title}}
+</h1>
+<label for="session-name">
+<input #sessionName id="session-name" type="text" value="" />
+</label>
+<nav>
+  <button (click)="goToLobby(sessionName.value)" >Criar Sessão</button>
+</nav>
