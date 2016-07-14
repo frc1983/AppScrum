@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+
   <title>AppScrum</title>
   <base href="/"> {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script> {{/unless}}
@@ -10,14 +14,15 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
-  <app-root>Loading...</app-root>
-  {{#each scripts.polyfills}}
-  <script src="{{.}}"></script> {{/each}}
-  <script>
+<app-root>Loading...</app-root>
+
+{{#each scripts.polyfills}}
+<script src="{{.}}"></script> {{/each}}
+<script>
       System.import('system-config.js').then(function () {
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
 </body>
+
 </html>

@@ -9,7 +9,7 @@ import { ROUTER_DIRECTIVES, Router } from '@angular/router';
     directives: [ROUTER_DIRECTIVES]
 })
 export class HomeComponent {
-    title = "Home";
+    title = "AppScrum - Aplicativo de votação para equipes ágeis.";
     af: AngularFire;
     router: Router;
 
@@ -20,14 +20,14 @@ export class HomeComponent {
 
     goToLobby(sessionName: String){
         console.log(sessionName)
-        const itemObservable = this.af.database.object('/lobies');
+        const itemObservable = this.af.database.list('/lobies');
         var session = {
             sessionInitDate: this.getDateNow(), 
             sessionName: sessionName,
             sessionHash: this.generateHash()
         };
         console.log(session)
-        itemObservable.set(session);
+        itemObservable.push(session);
         this.router.navigate(['/lobby']);
     }
 

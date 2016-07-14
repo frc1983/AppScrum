@@ -9,6 +9,6 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 export class LobbyComponent { 
     items: FirebaseListObservable<any[]>;
     constructor(af: AngularFire) {
-        this.items = af.database.list('/movies');
+        this.items = af.database.list('/lobies');
     }
 }

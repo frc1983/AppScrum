@@ -1,9 +1,21 @@
-<h1>
-  {{title}}
-</h1>
-<label for="session-name">
-<input #sessionName id="session-name" type="text" value="" />
-</label>
-<nav>
-  <button (click)="goToLobby(sessionName.value)" >Criar Sessão</button>
-</nav>
+<div class="container-fluid  text-center">
+    <div class="col-lg-12">
+        <h1>
+            {{title}}
+        </h1>
+    </div>
+    <div class="col-lg-12">
+        <h4>
+            Coloque o nome do projeto para criar a sessão de votações. <br />
+            Coloque o código gerado no aplicativo para conectar na sala de votações.
+        </h4>
+    </div>
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <div class="form-group">
+            <label for="session-name"></label>
+            <input #sessionName class="form-control input-lg" id="session-name" type="text" value="" />
+        </div>
+        <button class="btn btn-primary btn-lg" (click)="goToLobby(sessionName.value)">Criar Sessão</button>
+    </div>
+</div>
