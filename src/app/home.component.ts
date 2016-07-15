@@ -26,9 +26,9 @@ export class HomeComponent {
             sessionName: sessionName,
             sessionHash: this.generateHash()
         };
-        console.log(session)
+        
         itemObservable.push(session);
-        this.router.navigate(['/lobby']);
+        this.router.navigate(['/lobby/' + session.sessionHash]);
     }
 
     getDateNow(){

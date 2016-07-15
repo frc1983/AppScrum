@@ -13,7 +13,7 @@ const routes: RouterConfig = [
         component: HomeComponent
     },
     {
-        path: 'lobby',
+        path: 'lobby/:hash',
         component: LobbyComponent
     }
 ];
