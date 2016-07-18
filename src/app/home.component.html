@@ -13,9 +13,13 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
         <div class="form-group">
-            <label for="session-name"></label>
+            <label for="session-name">Projeto:</label>
             <input #sessionName class="form-control input-lg" id="session-name" type="text" value="" />
         </div>
-        <button class="btn btn-primary btn-lg" (click)="goToLobby(sessionName.value)">Criar Sessão</button>
+        <div class="form-group">
+            <label for="session-players">Quantidade de Jogadores:</label>
+            <input #sessionPlayer class="form-control input-lg" id="session-players" type="text" value="" />
+        </div>
+        <button class="btn btn-primary btn-lg" (click)="goToLobby(sessionName.value, sessionPlayer.value)">Criar Sessão</button>
     </div>
 </div>

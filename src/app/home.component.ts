@@ -18,12 +18,13 @@ export class HomeComponent {
         this.router = _router;
     }
 
-    goToLobby(sessionName: String){
+    goToLobby(sessionName: String, sessionPlayers: number){
         console.log(sessionName)
-        const itemObservable = this.af.database.list('/lobies');
+        const itemObservable = this.af.database.list('/lobbies');
         var session = {
             sessionInitDate: this.getDateNow(), 
             sessionName: sessionName,
+            sessionPlayers: sessionPlayers,
             sessionHash: this.generateHash()
         };
         
