@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import { ActivatedRoute } from '@angular/router';
+import { Player } from './models/Player';
 
 @Component({
     moduleId: module.id,
@@ -8,11 +9,13 @@ import { ActivatedRoute } from '@angular/router';
     templateUrl: 'lobby.component.html'
 })
 export class LobbyComponent {
-    session: FirebaseListObservable<any[]>;
-    players: any;
+    session: FirebaseListObservable<any>;
+    players: Array<Player>;
     hash: string;
 
-    constructor(private af: AngularFire, private route: ActivatedRoute) { }
+    constructor(private af: AngularFire, private route: ActivatedRoute) {
+        this.players = new Array();
+    }
 
     ngOnInit() {
         this.route.params.subscribe(params => {
@@ -26,7 +29,11 @@ export class LobbyComponent {
             });
 
             this.session.subscribe(sess => {
-                this.players = sess[0].players
+                this.players = new Array();
+                for (var key in sess[0].players)
+                    if (sess[0].players.hasOwnProperty(key))
+                        this.players.push(Player.fromJSON(sess[0].players[key]));
+                        
                 console.log(this.players)
             });
         });

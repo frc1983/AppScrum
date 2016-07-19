@@ -3,6 +3,6 @@
     <h1 *ngFor="let item of session | async">{{item.sessionName}} - {{item.sessionHash}}</h1>
   </div>
   <div class="col-lg-12">
-    
+    <h1 *ngFor="let player of players">{{player.playerId}} - {{player.playerName}}</h1>
   </div>
 </div>
