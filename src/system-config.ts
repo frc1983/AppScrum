@@ -6,13 +6,13 @@
  * User Configuration.
  **********************************************************************************************/
 /** Map relative paths to URLs. */
-const map: any = {
+var map: any = {
   'firebase': 'vendor/firebase/firebase.js',
   'angularfire2': 'vendor/angularfire2'
 };
 
 /** User packages configuration. */
-const packages: any = {
+var packages: any = {
   angularfire2: {
     defaultExtension: 'js',
     main: 'angularfire2.js'
@@ -23,7 +23,7 @@ const packages: any = {
 /***********************************************************************************************
  * Everything underneath this line is managed by the CLI.
  **********************************************************************************************/
-const barrels: string[] = [
+var barrels: string[] = [
   // Angular specific barrels.
   '@angular/core',
   '@angular/common',
@@ -43,7 +43,7 @@ const barrels: string[] = [
   /** @cli-barrel */
 ];
 
-const cliSystemConfigPackages: any = {};
+var cliSystemConfigPackages: any = {};
 barrels.forEach((barrelName: string) => {
   cliSystemConfigPackages[barrelName] = { main: 'index' };
 });

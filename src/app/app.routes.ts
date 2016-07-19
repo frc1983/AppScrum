@@ -1,7 +1,8 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { AppComponent } from './app.component';
-import { LobbyComponent } from './lobby.component';
-import { HomeComponent } from './home.component';
+import { LobbyComponent } from './pages/lobby.component';
+import { HomeComponent } from './pages/home.component';
+import { VotingComponent } from './pages/voting.component';
 
 const routes: RouterConfig = [
     {
@@ -15,6 +16,10 @@ const routes: RouterConfig = [
     {
         path: 'lobby/:hash',
         component: LobbyComponent
+    },
+    {
+        path: 'voting/:hash',
+        component: VotingComponent
     }
 ];
 
