@@ -1,5 +1,20 @@
 <div class="container-fluid  text-center">
-  <div class="col-lg-12">
-    <h1>Votação</h1>
+  <div class="row col-lg-12">
+    <div *ngFor="let player of players" class="card col-lg-3">
+
+      <div class="front">
+        <h6 class="card-title">AppScrum</h6> {{player.playerName}}
+      </div>
+
+      <div class="back">
+        <h6 class="card-title">AppScrum</h6> {{player.playerName}}
+        <h1 class="vote-value">{{player.playerVote}}</h1>
+      </div>
+
+    </div>
+    <div class="col-lg-12">
+      <button class="btn btn-primary btn-lg" (click)="showAllVotes()">Mostrar votos</button>
+      <button class="btn btn-primary btn-lg" (click)="resetVotes()">Reiniciar votação</button>
+    </div>
   </div>
 </div>

@@ -1,0 +1,24 @@
+.card {
+    width: 250px;
+    height: 350px;
+    margin: 20px;
+    display: table;
+    font-size: 35px; 
+}
+
+.card div {
+    border: 1px solid black;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.vote-value {
+    font-size: 105px; 
+    margin-top: 10px;
+}
+
+.card-title{
+    text-align: right;
+    border-bottom: 0.3px solid black;
+    margin: 20px;
+}

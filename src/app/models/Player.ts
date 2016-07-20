@@ -1,10 +1,12 @@
 export class Player {
     playerId: string;
     playerName: string;
+    playerVote: string;
 
     constructor(obj) {
         this.playerId = obj.playerId;
         this.playerName = obj.playerName;
+        this.playerVote = obj.playerVote;
     }
 
     static fromJSONArray(array: Array<Player>): Player[] {
