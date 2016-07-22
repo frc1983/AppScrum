@@ -13,9 +13,9 @@ bootstrap(AppComponent, [
   APP_ROUTER_PROVIDERS,
   // Initialize Firebase app  
   defaultFirebase({
-    apiKey: "AIzaSyDV9vGj67GXy-IyikZVV1YzkU9eDLvIwnQ",
-    authDomain: "scrumapp-a9f68.firebaseapp.com",
-    databaseURL: "https://scrumapp-a9f68.firebaseio.com",
-    storageBucket: "scrumapp-a9f68.appspot.com",
+    apiKey: "AIzaSyC7cLAUAe0wNJm_LER4IODjUgQpvOnaPGk",
+    authDomain: "appscrum-bbdca.firebaseapp.com",
+    databaseURL: "https://appscrum-bbdca.firebaseio.com",
+    storageBucket: "",
   })
 ]);
