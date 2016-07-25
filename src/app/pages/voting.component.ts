@@ -18,7 +18,6 @@ export class VotingComponent {
 
     constructor(private af: AngularFire, private route: ActivatedRoute) {
         this.players = new Array();
-
     }
 
     ngOnInit() {

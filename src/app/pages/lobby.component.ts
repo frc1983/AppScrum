@@ -14,6 +14,7 @@ export class LobbyComponent {
     players: Array<Player>;
     hash: string;
     router: Router;
+    sessionKey: string;
 
     constructor(private af: AngularFire, private route: ActivatedRoute, _router: Router) {
         this.players = new Array();
@@ -33,6 +34,7 @@ export class LobbyComponent {
 
             this.session.subscribe(sess => {
                 this.players = new Array();
+                this.sessionKey = sess[0].$key;
                 for (var key in sess[0].players)
                     if (sess[0].players.hasOwnProperty(key))
                         this.players.push(Player.fromJSON(sess[0].players[key]));
@@ -40,8 +42,11 @@ export class LobbyComponent {
                 if (this.players.length.toString() === sess[0].sessionPlayers)
                     this.router.navigate(['/voting/' + this.hash]);
             });
-
-
         });
+    }
+    
+    backToHome(){
+        this.af.database.object('/lobbies/' + this.sessionKey).remove();
+        this.router.navigate(['/home']);
     }
 }
