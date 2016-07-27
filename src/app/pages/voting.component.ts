@@ -15,12 +15,15 @@ export class VotingComponent {
     players: Array<Player>;
     hash: string;
     sessionKey: string;
+    showingVotes: boolean;
 
     constructor(private af: AngularFire, private route: ActivatedRoute) {
         this.players = new Array();
     }
 
     ngOnInit() {
+        this.showingVotes = false;
+
         this.route.params.subscribe(params => {
             this.hash = params['hash'];
 
@@ -47,8 +50,14 @@ export class VotingComponent {
     }
 
     showAllVotes() {
+        if (this.showingVotes)
+            this.showingVotes = false;
+        else
+            this.showingVotes = true;
+
         setTimeout(() => {
-            $(".card").flip(true);
+            console.log(this.showingVotes)
+            $(".card").flip(this.showingVotes);
         }, 0);
     }
 

@@ -10,6 +10,8 @@
     border: 1px solid black;
     display: table-cell;
     vertical-align: middle;
+    background-color: white;
+    color: black;
 }
 
 .vote-value {
